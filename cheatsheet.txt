@@ -1,0 +1,81 @@
+
+# sinfo, squeue, sacct etc.
+sinfo -p general
+
+# Example: Performance
+cd Examples/Performance
+sbatch -c 1 bwa.sh # runs out of RAM (default 5GB/core)
+sbatch -c 10 --mem=5g bwa.sh # also runs out
+sbatch -c 10 # runs ok.  Show htop, scontrol, sacct, 
+Htop: H combines threads.  F5 shows tree
+sacct -j jobid
+control show job jobid
+
+# Example: Performance
+$ module load Globus-CLI
+$ globus login
+(you'll get a url.  Open that in a browser, authenticate, and copy the code.  Enter the code on command line.)
+$ globus endpoint search RobsGlobus
+$ globus endpoint search yale#grace
+(set env vars to R and G)
+$ globus ls -l $R:/
+$ globus transfer -r -s size $R:data $G:tmp/data
+(returns taskid)
+$ globus task show taskid
+
+# Example Profiling python with cProfile and kernprof
+#
+cd Examples/Profiling
+module load Python
+(get compute node with srun, module load Python)
+python -m cProfile -o bad.prof bad.py
+(takes a minute or two)
+
+(in python)
+import pstats
+p=pstats.Stats('prof.out')
+p.sort_stats('time').print_stats()
+
+or
+kernprof for line-by-line
+module load Python
+(decorate functions with @profile)
+kernprof -l bad2.py
+python -m line_profiler  bad2.py.lprof
+
+kernprof -l good.py > /dev/null
+python -m line_profiler good.py.lprof
+
+# Example: GenomePL using dSQ
+cd Examples/GenomePL
+module load dSQ
+dSQ --jobfile tasks.sh > run.sh
+sbatch run.sh #fails
+sacct -j jobid
+sbatch --mem=10g run.sh
+
+# Example: R-Bootstrap
+cd R-Bootstrap
+sbatch parboot.sh
+
+# Example: Namd, parallel C
+cd Example/stmv
+sbatch multi.sh
+sbatch gpu.sh
+
+# Example mclapply in R: R-Kmeans
+cd R-Kmeans
+sbatch parkmeans.sh
+
+# Example: parallel map in Python, travelling salesman
+cd Example/TSP
+srun --pty -p interactive -c 10 bash
+import Python
+python seq.py
+python map.py
+python parmap.py
+
+# Parallel C: OpenMP
+make
+./mm
+

@@ -1,0 +1,2 @@
+genome.* filter=lfs diff=lfs merge=lfs -text
+*.psf filter=lfs diff=lfs merge=lfs -text
