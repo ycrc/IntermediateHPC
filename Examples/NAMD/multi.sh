@@ -1,11 +1,13 @@
 #!/bin/bash
-#SBATCH --partition=admintest
+#SBATCH --partition=day
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
-#SBATCH -t 10:00
+#SBATCH --mem=4G
+#SBATCH -time=10:00
 #SBATCH --output=multi-%j.out
+#SBATCH --constraint=icelake
 
 module reset
 module load NAMD/2.14-multicore
 
-namd2 +ppn $SLURM_CPUS_PER_TASK stmv.namd 
+namd2 +ppn $SLURM_CPUS_PER_TASK ../Data/stmv/stmv.namd 
