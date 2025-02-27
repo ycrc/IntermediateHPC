@@ -20,6 +20,6 @@ volume_estimate <- function(data, indices){
 }
 
 # bootstrap on tree data
-system.time(res<-boot(data=trees, statistic=volume_estimate, R=5000))
+system.time(res<-boot(data=trees, statistic=volume_estimate, R=50000))
 
 print(res)

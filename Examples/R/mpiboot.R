@@ -2,7 +2,7 @@ library(boot)
 library(snow)
 library(Rmpi)
 
-tasks=8 #as.integer(Sys.getenv("SLURM_NTASKS"))
+tasks=Sys.getenv("SLURM_NTASKS")
 print(tasks)
 
 # tries 5 different regression models on data
@@ -23,7 +23,7 @@ volume_estimate <- function(data, indices){
  return(relationships)
 }
 
-cl=makeMPIcluster(tasks-1) # need to leave one for master
+cl=getMPIcluster()
 # bootstrap on tree data
 system.time(res<-boot(data=trees, statistic=volume_estimate, R=50000, parallel="snow", cl=cl))
 
