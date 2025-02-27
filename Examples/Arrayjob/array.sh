@@ -5,4 +5,4 @@
 
 job=$(printf %03d ${SLURM_ARRAY_TASK_ID})
 
-module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_${job}.fq > Results/out${job}sam && samtools sort -O bam -o Results/out${job}bam Results/out${job}.sam
+module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_${job}.fq > Results/out${job}.sam && samtools sort -O bam -o Results/out${job}bam Results/out${job}.sam
