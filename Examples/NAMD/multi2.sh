@@ -3,7 +3,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=4G
-#SBATCH -t 10:00
+#SBATCH --time=10:00
 #SBATCH --output=multi2-%j.out
 
 module reset

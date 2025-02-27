@@ -3,7 +3,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=4G
-#SBATCH -time=10:00
+#SBATCH --time=10:00
 #SBATCH --output=multi-%j.out
 #SBATCH --constraint=icelake
 
