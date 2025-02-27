@@ -4,8 +4,6 @@ and annotates the reads with the annotations.
 This version does it in a very inefficient way.
 '''
 
-from __future__ import print_function
-
 def annotate(gf, mf, of):
     ofp=open(of, "w")
     genenames=[]
