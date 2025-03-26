@@ -5,6 +5,7 @@
 #SBATCH --mem=4G
 #SBATCH --time=10:00
 #SBATCH --output=multi2-%j.out
+#SBATCH --reservation=ihpc
 
 module reset
 module load NAMD/2.14-multicore

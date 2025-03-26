@@ -1,10 +1,10 @@
-module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_001.fq > Results/out001.sam && samtools sort -O bam -o Results/out001.bam Results/out001.sam
-module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_002.fq > Results/out002.sam && samtools sort -O bam -o Results/out002.bam Results/out002.sam
-module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_003.fq > Results/out003.sam && samtools sort -O bam -o Results/out003.bam Results/out003.sam
-module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_004.fq > Results/out004.sam && samtools sort -O bam -o Results/out004.bam Results/out004.sam
-module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_005.fq > Results/out005.sam && samtools sort -O bam -o Results/out005.bam Results/out005.sam
-module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_006.fq > Results/out006.sam && samtools sort -O bam -o Results/out006.bam Results/out006.sam
-module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_007.fq > Results/out007.sam && samtools sort -O bam -o Results/out007.bam Results/out007.sam
-module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_008.fq > Results/out008.sam && samtools sort -O bam -o Results/out008.bam Results/out008.sam
-module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_009.fq > Results/out009.sam && samtools sort -O bam -o Results/out009.bam Results/out009.sam
-module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_010.fq > Results/out010.sam && samtools sort -O bam -o Results/out010.bam Results/out010.sam
+module reset; module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_001.fq > Results/out001.sam && samtools sort -O bam -o Results/out001.bam Results/out001.sam
+module reset; module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_002.fq > Results/out002.sam && samtools sort -O bam -o Results/out002.bam Results/out002.sam
+module reset; module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_003.fq > Results/out003.sam && samtools sort -O bam -o Results/out003.bam Results/out003.sam
+module reset; module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_004.fq > Results/out004.sam && samtools sort -O bam -o Results/out004.bam Results/out004.sam
+module reset; module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_005.fq > Results/out005.sam && samtools sort -O bam -o Results/out005.bam Results/out005.sam
+module reset; module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_006.fq > Results/out006.sam && samtools sort -O bam -o Results/out006.bam Results/out006.sam
+module reset; module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_007.fq > Results/out007.sam && samtools sort -O bam -o Results/out007.bam Results/out007.sam
+module reset; module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_008.fq > Results/out008.sam && samtools sort -O bam -o Results/out008.bam Results/out008.sam
+module reset; module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_009.fq > Results/out009.sam && samtools sort -O bam -o Results/out009.bam Results/out009.sam
+module reset; module load SAMtools BWA; bwa mem ../Data/BWAIndex/genome.fa ../Data/Reads/reads_010.fq > Results/out010.sam && samtools sort -O bam -o Results/out010.bam Results/out010.sam

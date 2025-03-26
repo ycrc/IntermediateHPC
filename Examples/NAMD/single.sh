@@ -5,7 +5,7 @@
 #SBATCH --mem=4G
 #SBATCH --time=30:00
 #SBATCH --output=single-%j.out
-#SBATCH --constraint=icelake
+#SBATCH --reservation=ihpc
 
 module reset
 module load NAMD/2.14-multicore

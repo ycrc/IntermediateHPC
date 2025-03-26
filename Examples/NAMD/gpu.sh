@@ -6,6 +6,7 @@
 #SBATCH --gpus=1
 #SBATCH --time=10:00
 #SBATCH --output=gpu-%j.out
+#SBATCH --reservation=ihpc_gpu
 
 module reset
 module load NAMD/2.14-fosscuda-2020b

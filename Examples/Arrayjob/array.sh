@@ -2,6 +2,7 @@
 
 #SBATCH --array 1-10
 #SBATCH --mem=10g
+#SBATCH --reservation=ihpc
 
 job=$(printf %03d ${SLURM_ARRAY_TASK_ID})
 

@@ -5,6 +5,7 @@
 #SBATCH --mem-per-cpu=4G
 #SBATCH --output=mpi-%j.out
 #SBATCH --constraint=icelake
+#SBATCH --reservation=ihpc
 
 module reset
 module load NAMD/2.14-foss-2022b-mpi
