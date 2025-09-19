@@ -1,14 +1,13 @@
 #!/bin/bash
-#SBATCH --partition=day
+#SBATCH --partition=education
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=4G
 #SBATCH --time=30:00
 #SBATCH --output=single-%j.out
-#SBATCH --reservation=ihpc
 
 module reset
-module load NAMD/2.14-multicore
+module load NAMD/3.0.2-multicore-AVX512
 
-namd2 ../Data/stmv/stmv.namd 
+namd3 ../Data/stmv/stmv.namd 
 

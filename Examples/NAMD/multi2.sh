@@ -1,13 +1,12 @@
 #!/bin/bash
-#SBATCH --partition=day
+#SBATCH --partition=education
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=4G
 #SBATCH --time=10:00
 #SBATCH --output=multi2-%j.out
-#SBATCH --reservation=ihpc
 
 module reset
-module load NAMD/2.14-multicore
+module load NAMD/3.0.2-multicore-AVX512
 
-namd2 +ppn $SLURM_CPUS_PER_TASK ../Data/stmv/stmv.namd 
+namd3 +ppn $SLURM_CPUS_PER_TASK ../Data/stmv/stmv.namd 
