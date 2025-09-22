@@ -4,7 +4,7 @@
 #SBATCH --mem=2G
 #SBATCH --time=10:00
 #SBATCH --output=mpiboot-%j.out
-#SBATCH --roservation=ihpc
+#SBATCH --partition=education
 
 module reset
 module load R/4.2.0-foss-2020b

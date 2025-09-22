@@ -5,5 +5,5 @@
 #SBATCH --partition=education
 
 module reset
-module load R-bundle-CRAN/2024.06-foss-2022b
+module load R-bundle-CRAN
 Rscript boot.R
