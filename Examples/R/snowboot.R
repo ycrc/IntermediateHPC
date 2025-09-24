@@ -25,6 +25,6 @@ volume_estimate <- function(data, indices){
 
 cl=makeSOCKcluster(8)
 # bootstrap on tree data
-system.time(res<-boot(data=trees, statistic=volume_estimate, R=50000, parallel="snow", ncpus=8, cl=cl))
+system.time(res<-boot(data=trees, statistic=volume_estimate, R=300000, parallel="snow", ncpus=8, cl=cl))
 
 print(res)

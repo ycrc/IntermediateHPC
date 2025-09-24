@@ -1,0 +1,18 @@
+Running "module reset". Resetting modules to system default. The following $MODULEPATH directories have been removed: None
+   user  system elapsed 
+584.154   0.042 586.475 
+
+ORDINARY NONPARAMETRIC BOOTSTRAP
+
+
+Call:
+boot(data = trees, statistic = volume_estimate, R = 3e+05)
+
+
+Bootstrap Statistics :
+     original       bias    std. error
+t1* 0.3579026 0.0026339414  0.11839004
+t2* 0.9353199 0.0005072783  0.01757156
+t3* 0.7309204 0.0027929767  0.08085282
+t4* 0.9479500 0.0031747420  0.01204496
+t5* 0.9732894 0.0004558834  0.01032964

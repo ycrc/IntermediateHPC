@@ -25,7 +25,7 @@ volume_estimate <- function(data, indices){
 
 cl=getMPIcluster()
 # bootstrap on tree data
-system.time(res<-boot(data=trees, statistic=volume_estimate, R=50000, parallel="snow", cl=cl))
+system.time(res<-boot(data=trees, statistic=volume_estimate, R=300000, parallel="snow", cl=cl))
 
 stopCluster(cl)
 print(res)

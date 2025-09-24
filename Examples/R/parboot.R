@@ -23,6 +23,6 @@ volume_estimate <- function(data, indices){
 }
 
 # bootstrap on tree data
-system.time(res<-boot(data=trees, statistic=volume_estimate, R=50000, parallel="multicore", ncpus=cores))
+system.time(res<-boot(data=trees, statistic=volume_estimate, R=300000, parallel="multicore", ncpus=cores))
 
 print(res)
