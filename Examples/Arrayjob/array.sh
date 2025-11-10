@@ -2,7 +2,7 @@
 
 #SBATCH --array 1-10
 #SBATCH --mem=10g
-#SBATCH --partition=education
+#SBATCH --partition=day
 
 job=$(printf %03d ${SLURM_ARRAY_TASK_ID})
 
