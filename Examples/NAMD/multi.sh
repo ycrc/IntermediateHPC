@@ -2,7 +2,7 @@
 #SBATCH --partition=day
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
-#SBATCH --mem=4G
+#SBATCH --mem=5G
 #SBATCH --time=10:00
 #SBATCH --output=multi-%j.out
 
