@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition=day
+#SBATCH --partition=education
 #SBATCH --ntasks=8
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=4G

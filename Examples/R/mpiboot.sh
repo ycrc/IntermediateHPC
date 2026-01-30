@@ -4,7 +4,7 @@
 #SBATCH --mem=2G
 #SBATCH --time=30:00
 #SBATCH --output=mpiboot-%j.out
-#SBATCH --partition=day
+#SBATCH --partition=education
 
 module reset
 module load R
