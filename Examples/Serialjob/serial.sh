@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --mem=10g
+#SBATCH --mem=20g
 #SBATCH --partition=day_amd
 
 module load SAMtools BWA
