@@ -2,7 +2,7 @@
 #SBATCH --mem=4G
 #SBATCH --time=20:00
 #SBATCH --output=boot-%j.out
-#SBATCH --partition=education
+#SBATCH --partition=day_amd
 
 module reset
 module load R-bundle-CRAN

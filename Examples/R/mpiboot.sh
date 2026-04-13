@@ -4,11 +4,11 @@
 #SBATCH --mem=2G
 #SBATCH --time=30:00
 #SBATCH --output=mpiboot-%j.out
-#SBATCH --partition=education
+#SBATCH --partition=day_amd
 
 module reset
 module load R
-export R_LIBS_USER=/nfs/roberts/project/ihpc/shared/R
+export R_LIBS_USER=/nfs/roberts/courses/ihpc/R
 
 srun Rscript mpiboot.R
 
