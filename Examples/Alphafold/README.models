@@ -1,0 +1,10 @@
+To run this example, you will need to follow the instructions given
+when interactively loading the AlphaFold module on how to agree to
+the license to obtain the parameters file.
+This requires registering at https://forms.gle/svvpY4u2jsHEwWYS6 and
+agreeing to Google's terms of use. Once you have obtained your copy
+of the parameters, place the file in a "models" folder in your working folder.
+
+This parameters file can then be used for any of your subsequent
+runs of AlphaFold 3.
+
