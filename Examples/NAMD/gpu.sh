@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition=education_gpu
+#SBATCH --partition=gpu_devel
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=4G
