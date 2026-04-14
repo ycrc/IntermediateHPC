@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --job-name=alphafold
-#SBATCH --partition=admintest
+#SBATCH --partition=gpu
 #SBATCH --out="slurm-alphafold-bad-%j.out"
 #SBATCH --time=1-00:00:00
 #SBATCH --cpus-per-task=8
