@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --mem=20g
-#SBATCH --partition=devel
+#SBATCH --partition=day
 
 module load SAMtools BWA
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition=devel
+#SBATCH --partition=day
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=4G
