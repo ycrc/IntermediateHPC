@@ -1,5 +1,3 @@
-# Intermediate HPC
-
 # Intermediate HPC — Command Reference
 
 Commands from the **Intermediate HPC (2026.10.06)** workshop by the Yale Center for Research Computing (YCRC), in the order they appear in the slides.
