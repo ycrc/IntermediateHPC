@@ -3,7 +3,7 @@
 #SBATCH --mem=4G
 #SBATCH --time=10:00
 #SBATCH --output=parboot-%j.out
-#SBATCH --partition=day_amd
+#SBATCH --partition=day
 
 module reset
 module load R-bundle-CRAN
