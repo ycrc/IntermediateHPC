@@ -7,8 +7,13 @@
 #SBATCH --partition=day
 
 module reset
-module load R
-export R_LIBS_USER=/nfs/roberts/courses/ihpc/R
+module load R-bundle-CRAN
+
+# use the course copy of Rmpi if you don't have your own
+export R_LIBS_SITE="${R_LIBS_SITE:+$R_LIBS_SITE:}/nfs/roberts/courses/ihpc/R"
+
+# install Rmpi into your own R library if neither has it
+Rscript install-packages.R Rmpi || exit 1
 
 srun Rscript mpiboot.R
 

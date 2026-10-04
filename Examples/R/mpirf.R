@@ -21,7 +21,7 @@ mine = which((1:rf_tasks - 1) %% size == rank)
 mpi.barrier(0)
 timing = system.time({
  my_forests <- lapply(mine, grow_trees)
- all_forests <- mpi.gather.Robj(my_forests, root=0, comm=0)
+ all_forests <- mpi.gather.Robj(my_forests, root=0, comm=0, simplify=FALSE)
 })
 
 if (rank == 0) {

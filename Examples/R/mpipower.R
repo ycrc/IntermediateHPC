@@ -21,7 +21,7 @@ mine = which((seq_along(tasks) - 1) %% size == rank)
 mpi.barrier(0)
 timing = system.time({
  my_rejects <- lapply(tasks[mine], run_task)
- all_rejects <- mpi.gather.Robj(list(mine=mine, rejects=my_rejects), root=0, comm=0)
+ all_rejects <- mpi.gather.Robj(list(mine=mine, rejects=my_rejects), root=0, comm=0, simplify=FALSE)
 })
 
 if (rank == 0) {

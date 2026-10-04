@@ -37,7 +37,7 @@ for (i in seq_len(rank)) .Random.seed <- parallel::nextRNGStream(.Random.seed)
 mpi.barrier(0)
 timing = system.time({
  res_local <- boot(data=trees, statistic=volume_estimate, R=R_local)
- all_res <- mpi.gather.Robj(res_local, root=0, comm=0)
+ all_res <- mpi.gather.Robj(res_local, root=0, comm=0, simplify=FALSE)
 })
 
 if (rank == 0) {
