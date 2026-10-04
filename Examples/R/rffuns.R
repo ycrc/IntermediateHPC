@@ -1,5 +1,5 @@
 # shared code for the random forest examples
-# (rf.R, mcrf.R, psockrf.R, mpirf.R)
+# (rf.R, mcrf.R, parallelrf.R, mpirf.R)
 #
 # see README.rf for what a random forest is
 #

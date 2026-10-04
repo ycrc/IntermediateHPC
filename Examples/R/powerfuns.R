@@ -1,5 +1,5 @@
 # shared code for the power simulation examples
-# (power.R, mcpower.R, psockpower.R, mpipower.R)
+# (power.R, mcpower.R, parallelpower.R, mpipower.R)
 #
 # see README.power for what a power simulation is
 #
