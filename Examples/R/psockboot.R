@@ -1,8 +1,8 @@
 
 library(boot)
-library(snow)
+library(parallel)
 
-cores=Sys.getenv("SLURM_CPUS_ON_NODE")
+cores=as.integer(Sys.getenv("SLURM_CPUS_PER_TASK"))
 print(cores)
 
 # tries 5 different regression models on data
@@ -23,8 +23,9 @@ volume_estimate <- function(data, indices){
  return(relationships)
 }
 
-cl=makeSOCKcluster(8)
+cl=makePSOCKcluster(cores)
 # bootstrap on tree data
-system.time(res<-boot(data=trees, statistic=volume_estimate, R=300000, parallel="snow", ncpus=8, cl=cl))
+system.time(res<-boot(data=trees, statistic=volume_estimate, R=300000, parallel="snow", ncpus=cores, cl=cl))
 
+stopCluster(cl)
 print(res)
