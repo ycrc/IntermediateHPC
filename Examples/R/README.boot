@@ -1,4 +1,4 @@
-Bootstrap (boot.R, mcboot.R, psockboot.R, mpiboot.R)
+Bootstrap (boot.R, mcboot.R, parallelboot.R, mpiboot.R)
 
 The bootstrap estimates how much a statistic would vary if we could collect
 new data. It resamples the rows of the data with replacement to make many

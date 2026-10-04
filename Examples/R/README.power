@@ -1,4 +1,4 @@
-Power simulation (power.R, mcpower.R, psockpower.R, mpipower.R)
+Power simulation (power.R, mcpower.R, parallelpower.R, mpipower.R)
 
 The power of a statistical test is the chance that it detects a real effect.
 It depends on the sample size and on how big the effect is, and it is often

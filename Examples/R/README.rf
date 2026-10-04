@@ -1,4 +1,4 @@
-Random forests (rf.R, mcrf.R, psockrf.R, mpirf.R)
+Random forests (rf.R, mcrf.R, parallelrf.R, mpirf.R)
 
 A decision tree predicts by asking a series of yes/no questions about the
 features (is x1 > 0.3? is x2 < -1?) until it reaches a leaf with an answer.
