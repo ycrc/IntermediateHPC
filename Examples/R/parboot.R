@@ -1,7 +1,7 @@
 
 library(boot)
 
-cores=Sys.getenv("SLURM_CPUS_ON_NODE")
+cores=as.integer(Sys.getenv("SLURM_CPUS_PER_TASK"))
 print(cores)
 
 # tries 5 different regression models on data
