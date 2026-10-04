@@ -1,0 +1,11 @@
+Random forests (rf.R, mcrf.R, psockrf.R, mpirf.R)
+
+A decision tree predicts by asking a series of yes/no questions about the
+features (is x1 > 0.3? is x2 < -1?) until it reaches a leaf with an answer.
+One deep tree fits its training data too closely, so a random forest grows
+many trees, each on a random resample of the rows and choosing from a random
+subset of the features at every split. The forest predicts by majority vote
+of its trees, which is far more accurate than any single tree.
+
+Why it parallelizes well: every tree is grown independently, so different
+workers can grow different trees and the results are simply pooled.
