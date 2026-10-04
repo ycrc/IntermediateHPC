@@ -1,0 +1,17 @@
+Power simulation (power.R, mcpower.R, psockpower.R, mpipower.R)
+
+The power of a statistical test is the chance that it detects a real effect.
+It depends on the sample size and on how big the effect is, and it is often
+easiest to estimate by simulation: draw many fake datasets with a known
+effect, run the test on each, and count how often it gives p < 0.05.
+
+These examples estimate the power of a two-sample t-test for sample sizes
+20, 50, 100 and 200 and effect sizes 0, 0.2, 0.5 and 0.8. Each test draws
+both samples from one large shared population and adds the effect to the
+second sample. With an effect of 0 there is nothing to detect, so that
+column shows the false positive rate, which should be close to 0.05.
+
+Why it parallelizes well: every simulated test is independent, so the tests
+are split into tasks that different workers run, and the counts are summed.
+The large shared population also shows the cost of copying data to workers
+that do not share memory (PSOCK and MPI) compared to forked ones (multicore).
