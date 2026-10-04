@@ -1,9 +1,10 @@
 library(boot)
-library(snow)
 library(Rmpi)
 
-tasks=Sys.getenv("SLURM_NTASKS")
-print(tasks)
+# every MPI task launched by srun runs this script
+rank = mpi.comm.rank(0)
+size = mpi.comm.size(0)
+if (rank == 0) print(size)
 
 # tries 5 different regression models on data
 volume_estimate <- function(data, indices){
@@ -23,13 +24,29 @@ volume_estimate <- function(data, indices){
  return(relationships)
 }
 
-cl=getMPIcluster()
-# bootstrap on tree data
-system.time(res<-boot(data=trees, statistic=volume_estimate, R=300000, parallel="snow", cl=cl))
+# split the bootstrap replicates evenly across tasks
+R_total = 300000
+R_local = R_total %/% size + (rank < R_total %% size)
 
-stopCluster(cl)
-print(res)
+# give each task its own independent random number stream
+RNGkind("L'Ecuyer-CMRG")
+set.seed(12345)
+for (i in seq_len(rank)) .Random.seed <- parallel::nextRNGStream(.Random.seed)
+
+# bootstrap on tree data, then gather all replicates on task 0
+mpi.barrier(0)
+timing = system.time({
+ res_local <- boot(data=trees, statistic=volume_estimate, R=R_local)
+ all_res <- mpi.gather.Robj(res_local, root=0, comm=0)
+})
+
+if (rank == 0) {
+ print(timing)
+ res = all_res[[1]]
+ res$t = do.call(rbind, lapply(all_res, function(r) r$t))
+ res$R = nrow(res$t)
+ res$call$R = res$R
+ print(res)
+}
+
 mpi.quit()
-
-print(res)
-
