@@ -2,7 +2,7 @@
 #SBATCH --cpus-per-task=8  
 #SBATCH --mem=4G
 #SBATCH --time=10:00
-#SBATCH --output=parboot-%j.out
+#SBATCH --output=mcboot-%j.out
 #SBATCH --partition=day
 
 module reset
