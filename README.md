@@ -1,6 +1,6 @@
 # Intermediate HPC — Command Reference
 
-Commands from the **Intermediate HPC (2026.10.06)** workshop by the Yale Center for Research Computing (YCRC), in the order they appear in the slides.
+Commands from the **Intermediate HPC (2026.10.06)** workshop by the Yale Center for Research Computing (YCRC).
 
 - Examples repo: <https://github.com/ycrc/IntermediateHPC>
 - Slides: <http://tinyurl.com/Intermediate-HPC>
