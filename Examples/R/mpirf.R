@@ -10,8 +10,13 @@ if (rank == 0) print_settings(size)
 # task 0 makes the data and sends a copy to every other task
 mpi.barrier(0)
 timing = system.time({
- train <- if (rank == 0) make_data() else NULL
- train <- mpi.bcast.Robj(train, rank=0, comm=0)
+ # mpi.bcast.Robj only returns the object on the receiving tasks
+ if (rank == 0) {
+  train <- make_data()
+  mpi.bcast.Robj(train, rank=0, comm=0)
+ } else {
+  train <- mpi.bcast.Robj(NULL, rank=0, comm=0)
+ }
 })
 if (rank == 0) print(timing)
 

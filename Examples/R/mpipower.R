@@ -9,8 +9,13 @@ if (rank == 0) print_settings(size)
 # task 0 makes the population and sends a copy to every other task
 mpi.barrier(0)
 timing = system.time({
- population <- if (rank == 0) make_population() else NULL
- population <- mpi.bcast.Robj(population, rank=0, comm=0)
+ # mpi.bcast.Robj only returns the object on the receiving tasks
+ if (rank == 0) {
+  population <- make_population()
+  mpi.bcast.Robj(population, rank=0, comm=0)
+ } else {
+  population <- mpi.bcast.Robj(NULL, rank=0, comm=0)
+ }
 })
 if (rank == 0) print(timing)
 
