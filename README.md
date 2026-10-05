@@ -144,16 +144,16 @@ jobstats JOBID
 Multicore bootstrap:
 
 ```bash
-cat parboot.R
-sbatch parboot.sh
+cat mcboot.R
+sbatch mcboot.sh
 jobstats JOBID
 ```
 
-`snow` cluster bootstrap:
+Cluster bootstrap:
 
 ```bash
-cat snowboot.R
-sbatch snowboot.sh
+cat parallelboot.R
+sbatch parallelboot.sh
 jobstats JOBID
 ```
 
