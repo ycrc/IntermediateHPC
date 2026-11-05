@@ -3,6 +3,8 @@
 #SBATCH --mem=20g
 #SBATCH --partition=day
 
+mkdir -p Results
+
 module load SAMtools BWA
 
 for i in $(seq 1 10); do
