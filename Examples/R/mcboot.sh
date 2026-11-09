@@ -7,4 +7,4 @@
 
 module reset
 module load R-bundle-CRAN
-Rscript parboot.R
+Rscript mcboot.R
